@@ -11,7 +11,7 @@ function createWindow() {
 	});
 
 	// and load the index.html of the app.
-	win.loadFile("app/index.html");
+	win.loadFile("app/dashboard/index.html");
 }
 
 app.whenReady().then(createWindow);
