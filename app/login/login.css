@@ -1,27 +1,53 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #1C2022;
+}
+
 h1 {
     position: fixed;
-    top: 10%;
-    transform: translateX(-50%);
-    left: 50%;
+    color: white;
+    font-size: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8%;
+    margin: 0;
+}
+
+p {
+    position: fixed;
+    color: white;
+    font-size: 30px;
+    top: 63%;
+    transform: translateY(-50%);
+    left: 8%;
+    margin: 0;
+}
+
+p a {
+    color: white;
+}
+
+.btn {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 65%;
+    padding: 20px 35px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+#discord { 
+    top: 40%;
+    color: black;
+    background: #7289da;
 }
 
 #github {
-    position: fixed;
-    top: 40%;
-    transform: translateX(-50%);
-    left: 50%;
-}
-
-#discord {
-    position: fixed;
-    top: 50%;
-    transform: translateX(-50%);
-    left: 50%;
-}
-
-#proceed {
-    position: fixed;
     top: 60%;
-    transform: translateX(-50%);
-    left: 50%;
+    background: #f2f2f2;
 }
