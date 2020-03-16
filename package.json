@@ -1,0 +1,15 @@
+{
+  "name": "telemaki",
+  "version": "1.0.0",
+  "description": "A simple bot builder and editor for discord",
+  "main": "main.js",
+  "scripts": {
+	"start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^8.1.1"
+  }
+}
