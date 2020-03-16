@@ -1,0 +1,27 @@
+h1 {
+    position: fixed;
+    top: 10%;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#github {
+    position: fixed;
+    top: 40%;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#discord {
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#proceed {
+    position: fixed;
+    top: 60%;
+    transform: translateX(-50%);
+    left: 50%;
+}
