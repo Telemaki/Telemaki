@@ -11,9 +11,9 @@ let win;
 
 app.allowRendererProcessReuse = true
  
-client.on("ready", () => win.loadFile('./app/dashboard/index.html'))
+client.on("ready", () => win.loadFile('app/dashboard/index.html'))
 
-ipcMain.on("login", async event => {
+ipcMain.on("login", event => {
 	client.login({ clientId, clientSecret });
 });
 
