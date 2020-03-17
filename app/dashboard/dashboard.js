@@ -22,22 +22,39 @@ let app = new Vue({
 			{text: "Account", link: "../images/person.svg"},
 			{text: "Log Out", link: "../images/logout.svg"}
 		],
-		projects: [],
+		projects: ["Test", "Test 2"],
 		showPrompt: false,
-		name: ""
+		name: null,
+		error: null
 	},
 	methods: {
 		greet() {
-			alert("Hello");
+			this.projects = []
 		},
-		add() {
+		openPrompt() {
 			this.showPrompt = true
+			this.error = null
 		},
 		closePrompt() {
 			this.showPrompt = false
+			this.error = null
 		},
 		createProject() {
-			
+			let thisIsUseful = this.projects.find(item => item == this.name);
+			if (this.name && !thisIsUseful) { this.projects.push(this.name);
+				this.closePrompt();
+				window.location.href = ("/editor/index.html?name=" + this.name)
+				this.name = "" 
+			} else {
+				if(!thisIsUseful) {
+					this.error = "Please provide a name"
+				} else {
+					this.error = "You already have a project with that name";
+				}
+			}
+		},
+		openClicked(name) {
+			window.location.href = ("/editor/index.html?name=" + name)
 		}
 	}
 });
