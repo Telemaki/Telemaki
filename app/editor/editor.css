@@ -1,0 +1,11 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+#editor {
+    left: 50vw;
+    width: 50vw;
+    min-height: 100vh;
+    margin: 0;
+}
