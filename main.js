@@ -2,8 +2,8 @@ const {app, BrowserWindow, ipcMain} = require("electron");
 const RPC = require('discord-rpc');
 
 const clientId = '606983186760728606';
-const clientSecret = process.env.SECRET;
-const scopes = ['rpc'];
+const clientSecret = process.env.SECRET; // this doesnt have to be secret, but you can
+const scopes = ['rpc', 'rpc.api',];
  
 const client = new RPC.Client({ transport: 'ipc' });
 
@@ -11,23 +11,28 @@ let win;
 
 app.allowRendererProcessReuse = true
  
-client.on("ready", () => win.loadFile('app/dashboard/index.html'))
+client.on("ready", () => {
+	console.log(client.user.username)
+	win.webContents.send('username', client.user.username);
+	win.loadFile('app/dashboard/index.html')
+})
 
 ipcMain.on("login", event => {
 	client.login({ clientId, clientSecret });
 });
 
 function createWindow() {
-	// Create the browser window.
 	win = new BrowserWindow({
 		width: 1600,
-		height: 1600 / 16 * 9,
+		height: 900,
+		show: false,
 		webPreferences: {
 			nodeIntegration: true
 		}
 	});
-
-	// and load the index.html of the app.
+	win.once('ready-to-show', () => {
+		win.show()
+	})
 	win.loadFile("app/login/index.html");
 }
 

@@ -1,4 +1,3 @@
-/* global Vue */
 Vue.component("navelem", {
 	props: ["text", "link"],
 	template: `<div @click="handleClick" class="element"><br><span class="text">{{ text }}</span><br><img width="48" :src="link"></div>`,
@@ -23,11 +22,22 @@ let app = new Vue({
 			{text: "Account", link: "../images/person.svg"},
 			{text: "Log Out", link: "../images/logout.svg"}
 		],
-		projects: ["this-name", "that-name"]
+		projects: [],
+		showPrompt: false,
+		name: ""
 	},
 	methods: {
-		greet: function() {
+		greet() {
 			alert("Hello");
+		},
+		add() {
+			this.showPrompt = true
+		},
+		closePrompt() {
+			this.showPrompt = false
+		},
+		createProject() {
+			
 		}
 	}
 });

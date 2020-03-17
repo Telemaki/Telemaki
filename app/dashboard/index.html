@@ -5,13 +5,18 @@
 	</head>
 	<body>
 		<div id="app">
+			<div id="prompt" v-if="showPrompt">
+				<span>Enter your project name</span><br><br>
+				<input type="text" id="name" v-model="name"><br><br>
+				<button @click.prevent="createProject()" id="add-button">Add Project {{ name }}</button><br><br>
+				<button @click.prevent="closePrompt()">Close</button>
+			</div>
 			<div id="sidebar">
 				<navelem @click="greet" v-for="elem in navElements" v-bind:text="elem.text" v-bind:link="elem.link"></navelem>
 			</div>
 			<div id="cards">
 				<project-card v-for="elem in projects" v-bind:name="elem"></project-card>
-				<div id="add">
-					<span>+</span></div>
+				<div id="add" @click="add"><span>+</span></div>
 			</div>
 		</div>
 		<script src="../vue.js"></script>
