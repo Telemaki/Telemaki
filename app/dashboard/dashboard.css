@@ -1,143 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 #app {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 #sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 50px;
-  height: calc(100vh - 50px);
-  width: 160px;
-  color: white;
-  text-align: center;
-  background-color: #24282A;
-  font-size: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    height: calc(100vh - 50px);
+    width: 160px;
+    color: white;
+    text-align: center;
+    background-color: #24282A;
+    font-size: 20px;
 }
 
 #cards {
-  display: flex;
-  flex-wrap: wrap;
-  position: fixed;
-  padding: 100px;
-  background-color: #1C2022;
-  left: 160px;
-  top: 0;
-  width: calc(100vw - 280px);
-  height: calc(100vh - 120px);
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    padding: 100px;
+    background-color: #1C2022;
+    left: 160px;
+    top: 0;
+    width: calc(100vw - 280px);
+    height: calc(100vh - 120px);
 }
 
 #cards #add {
-  margin-right: 50px;
-  min-width: 400px;
-  min-height: 200px;
-  max-width: 400px;
-  max-height: 200px;
-  border: 8px dashed #539c41;
-  background-color: #344031;
+    margin-right: 50px;
+    min-width: 400px;
+    min-height: 200px;
+    max-width: 400px;
+    max-height: 200px;
+    border: 8px dashed #539c41;
+    background-color: #344031;
 }
 
 #cards #add span {
-  color: white;
-  font-size: 90px;
-  position: relative;
-  top: 50%;
-  left: calc(50% - 22.5px);
-  transform: translate(-50%, -50%);
-  line-height: 0px;
+    color: white;
+    font-size: 90px;
+    position: relative;
+    top: 50%;
+    left: calc(50% - 22.5px);
+    transform: translate(-50%, -50%);
+    line-height: 0px;
 }
 
 #cards .card {
-  margin-right: 50px;
-  min-width: 416px;
-  min-height: 216px;
-  max-width: 416px;
-  max-height: 216px;
-  background-color: #4c565c;
+    margin-right: 50px;
+    min-width: 416px;
+    min-height: 216px;
+    max-width: 416px;
+    max-height: 216px;
+    background-color: #4c565c;
 }
 
 #cards .card .bottom {
-  position: relative;
-  top: 166px;
-  left: 0;
-  width: calc(100% - 28px);
-  color: white;
-  padding-left: 20px;
-  height: 50px;
-  line-height: 50px;
-  background-color: #30373b;
-  border-left: 8px solid #539c41;
+    position: relative;
+    top: 166px;
+    left: 0;
+    width: calc(100% - 28px);
+    color: white;
+    padding-left: 20px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #30373b;
+    border-left: 8px solid #539c41;
 }
 
 #cards .card .bottom img {
-  position: relative;
-  top: 9px;
-  height: 30px;
-  vertical-align: middle;
-  float: right;
+    position: relative;
+    top: 9px;
+    height: 30px;
+    vertical-align: middle;
+    float: right;
 }
 
 #shadow {
-  z-index: 1;
-  background-color: rgba(0,0,0,0.5);
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
 }
 
 #prompt {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  background-color: #2d2f30;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #2d2f30;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px;
 }
 
 #prompt span {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 #prompt input {
-  background-color: #3c3e40;
-  padding: 5px 10px;
-  outline: none;
-  color: white;
-  border: none;
-  border-radius: 5px;
+    background-color: #3c3e40;
+    padding: 5px 10px;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 #prompt button {
-  background-color: #3c3e40;
-  padding: 5px 10px;
-  color: white;
-  border: none;
-  font-size: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 50%;
+    background-color: #3c3e40;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 50%;
 }
 
 #prompt button.add {
-  border-bottom-left-radius: 5px;
-  left: 0;
-  background-color: #539c41;
+    border-bottom-left-radius: 5px;
+    left: 0;
+    background-color: #539c41;
 }
 
 #prompt button.close {
-  border-bottom-right-radius: 5px;
-  right: 0;
-  background-color: #914540;
+    border-bottom-right-radius: 5px;
+    right: 0;
+    background-color: #914540;
 }
 
 #prompt .badName {
-  color: red;
+    color: red;
 }
