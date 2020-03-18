@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" href="dashboard.css">
-	</head>
-	<body>
-		<div id="app">
-			<div id="shadow" v-if="showPrompt"></div>
-			<div id="prompt" v-if="showPrompt">
-				<span class="badName" v-if="error">{{ error }}</span><br>
-				<span>Enter your project name</span><br><br>
-				<input type="text" id="name" @keyup.enter="createProject()" v-model="name"><br><br>
-				<button class="add" @click.prevent="createProject()" id="add-button">Add Project</button><br><br>
-				<button class="close" @click.prevent="closePrompt()">Close</button>
-			</div>
-			<div id="sidebar">
-				<navelem @click="greet" v-for="elem in navElements" v-bind:text="elem.text" v-bind:link="elem.link"></navelem>
-			</div>
-			<div id="cards">
-				<project-card v-for="elem in projects" v-bind:name="elem" @click.native="openClicked(elem)"></project-card>
-				<div id="add" @click="openPrompt()"><span>+</span></div>
-			</div>
+
+<head>
+	<link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+	<div id="app">
+		<div id="shadow" v-if="showPrompt"></div>
+		<div id="prompt" v-if="showPrompt">
+			<span class="badName" v-if="error">{{ error }}</span><br>
+			<span>Enter your project name</span><br><br>
+			<input type="text" id="name" @keyup.enter="createProject()" v-model="name"><br><br>
+			<button class="add" @click.prevent="createProject()" id="add-button">Add Project</button><br><br>
+			<button class="close" @click.prevent="closePrompt()">Close</button>
 		</div>
-		<script src="../vue.js"></script>
-		<script src="dashboard.js"></script>
-	</body>
+		<div id="sidebar">
+			<navelem @click="greet" v-for="elem in navElements" v-bind:text="elem.text" v-bind:link="elem.link">
+			</navelem>
+		</div>
+		<div id="cards">
+			<project-card v-for="elem in projects" v-bind:name="elem" @click.native="openClicked(elem)"></project-card>
+			<div id="add" @click="openPrompt()"><span>+</span></div>
+		</div>
+	</div>
+	<script src="../vue.js"></script>
+	<script src="dashboard.js"></script>
+</body>
+
 </html>
