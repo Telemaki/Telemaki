@@ -1,8 +1,6 @@
 const {app, BrowserWindow, ipcMain} = require("electron");
 const RPC = require('discord-rpc');
 
-const clientId = '606983186760728606';
-const clientSecret = process.env.SECRET; // this doesnt have to be secret, but you can
 const scopes = ['rpc', 'rpc.api',];
  
 const client = new RPC.Client({ transport: 'ipc' });
@@ -17,9 +15,8 @@ client.on("ready", () => {
 	win.loadFile('app/dashboard/index.html')
 })
 
-ipcMain.on("login", event => {
-	client.login({ clientId, clientSecret });
-});
+ipcMain.on("login", event => client.login({ clientId: "id", clientSecret: "secret" }));
+ipcMain.on("changeUrl", (event, url) => win.loadFile(url))
 
 function createWindow() {
 	win = new BrowserWindow({

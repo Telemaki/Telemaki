@@ -9,8 +9,8 @@
 			<div id="prompt" v-if="showPrompt">
 				<span class="badName" v-if="error">{{ error }}</span><br>
 				<span>Enter your project name</span><br><br>
-				<input type="text" id="name" v-model="name"><br><br>
-				<button class="add" @click.prevent="createProject()" id="add-button">Add Project {{ name }}</button><br><br>
+				<input type="text" id="name" @keyup.enter="createProject()" v-model="name"><br><br>
+				<button class="add" @click.prevent="createProject()" id="add-button">Add Project</button><br><br>
 				<button class="close" @click.prevent="closePrompt()">Close</button>
 			</div>
 			<div id="sidebar">

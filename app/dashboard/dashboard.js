@@ -1,3 +1,5 @@
+const { ipcRenderer } = require('electron');
+
 Vue.component("navelem", {
 	props: ["text", "link"],
 	template: `<div @click="handleClick" class="element"><br><span class="text">{{ text }}</span><br><img width="48" :src="link"></div>`,
@@ -22,7 +24,7 @@ let app = new Vue({
 			{text: "Account", link: "../images/person.svg"},
 			{text: "Log Out", link: "../images/logout.svg"}
 		],
-		projects: ["Test", "Test 2"],
+		projects: [],
 		showPrompt: false,
 		name: null,
 		error: null
@@ -43,7 +45,6 @@ let app = new Vue({
 			let thisIsUseful = this.projects.find(item => item == this.name);
 			if (this.name && !thisIsUseful) { this.projects.push(this.name);
 				this.closePrompt();
-				window.location.href = ("/editor/index.html?name=" + this.name)
 				this.name = "" 
 			} else {
 				if(!thisIsUseful) {
@@ -54,7 +55,7 @@ let app = new Vue({
 			}
 		},
 		openClicked(name) {
-			window.location.href = ("/editor/index.html?name=" + name)
+			ipcRenderer.send('changeUrl', "app/editor/index.html")
 		}
 	}
 });
