@@ -36,7 +36,7 @@ let app = new Vue({
 	},
 	methods: {
 		greet() { this.projects = [] },
-		openClicked(name) { ipcRenderer.send('changeUrl', "app/editor/index.html") },
+		openClicked(name) { ipcRenderer.send('changeUrl', "/editor") },
 		openPrompt() {
 			this.showPrompt = true
 			this.error = null
