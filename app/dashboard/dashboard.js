@@ -12,7 +12,12 @@ Vue.component("navelem", {
 
 Vue.component("project-card", {
 	props: ["name"],
-	template: `<div class="card"><div class="top"></div><div class="bottom">{{ name }}<img src="../images/kebab.svg" /></div></div>`
+	template: `<div class="card"><div class="top"></div><div class="bottom">{{ name }}<img @click="handleClick" src="../images/kebab.svg" /></div></div>`,
+	methods: {
+		handleClick() {
+			this.$emit("click");
+		}
+	}
 });
 
 let app = new Vue({
@@ -52,6 +57,9 @@ let app = new Vue({
 					this.error = "You already have a project with that name";
 				}
 			}
+		},
+		kebabClick() {
+			alert(1)
 		}
 	}
 });
