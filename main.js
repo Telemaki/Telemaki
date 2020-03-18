@@ -1,6 +1,6 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
-const RPC = require('discord-rpc');
-
+const { app, BrowserWindow, ipcMain } 
+             = require("electron");
+const RPC    = require('discord-rpc');
 const client = new RPC.Client({ transport: 'ipc' });
 
 let win;
@@ -12,7 +12,7 @@ client.on("ready", () => {
     win.loadFile('app/dashboard/index.html')
 })
 
-ipcMain.on("login",      event       => client.login({ clientId: "id", clientSecret: "secret" }));
+ipcMain.on("login",     (event)      => client.login({ clientId: "id", clientSecret: "secret" }));
 ipcMain.on("changeUrl", (event, url) => win.loadFile(url))
 
 app.on('window-all-closed', () => process.platform !== 'darwin' && app.quit())

@@ -30,9 +30,8 @@ let app = new Vue({
 		error: null
 	},
 	methods: {
-		greet() {
-			this.projects = []
-		},
+		greet() { this.projects = [] },
+		openClicked(name) { ipcRenderer.send('changeUrl', "app/editor/index.html") },
 		openPrompt() {
 			this.showPrompt = true
 			this.error = null
@@ -53,9 +52,6 @@ let app = new Vue({
 					this.error = "You already have a project with that name";
 				}
 			}
-		},
-		openClicked(name) {
-			ipcRenderer.send('changeUrl', "app/editor/index.html")
 		}
 	}
 });
